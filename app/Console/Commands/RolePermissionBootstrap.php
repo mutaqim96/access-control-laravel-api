@@ -54,7 +54,7 @@ class RolePermissionBootstrap extends Command
         
         foreach($roles as $role)
         {
-            $role = Role::updateOrCreate(['name'=> $role, 'guard_nmae'=> 'api']);
+            $role = Role::updateOrCreate(['name'=> $role, 'guard_name'=> 'api']);
 
             $this->info("Created".$role->name . "Role");
 
@@ -72,7 +72,7 @@ class RolePermissionBootstrap extends Command
 
             $superAdminRole -> givePermissionTo($permission);
 
-            $this->info("Created". $permission->name . "Permission");
+            $this->info("Created ". $permission->name . "Permission");
         
         }//tutup foreach 2
 
